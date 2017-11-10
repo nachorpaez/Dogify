@@ -1,4 +1,3 @@
-ignore
 
 gradlew.bat clean build
 
