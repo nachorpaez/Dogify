@@ -2,15 +2,15 @@ package com.dogify.dto;
 
 public class DtoTarifadorTarifarResponse {
 	
-	public Double tarifa;
-	public Double tarifaConDescuento;
+	public double tarifa;
+	public double tarifaConDescuento;
 	public Boolean gratis;
 
-	public static DtoTarifadorTarifarResponse mock() {
+	public static DtoTarifadorTarifarResponse build(double tarifa, double tarifaConDescuento, boolean gratis) {
 		DtoTarifadorTarifarResponse result = new DtoTarifadorTarifarResponse();
-		result.tarifa = Math.random() * 100;
-		result.tarifaConDescuento = result.tarifa * 0.9;
-		result.gratis = false;
+		result.tarifa = tarifa;
+		result.tarifaConDescuento = tarifaConDescuento;
+		result.gratis = gratis;
 		return result;
 	}
 }
