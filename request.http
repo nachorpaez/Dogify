@@ -1,0 +1,33 @@
+POST http://localhost:8080/tarifador/tarifar
+content-type: application/json
+
+{
+   {
+      "id": "123",
+      "perros": [
+         {
+            "id": "124",
+            "idDuenio": "456",
+            "tamanio": "5"
+         }
+      ],
+      "clarin": false,
+      "laNacion": false,
+      "cantidadPaseos": 11
+   },
+   {
+      "perros": [
+         {
+            "id": "124",
+            "idDuenio": "456",
+            "tamanio": "5"
+         }
+      ],
+      "zone": "almagro",
+      "paseador": {
+         "id": "12345",
+         "calidad": "cinco"
+      },
+      "tipo": "clasic"
+   }
+}

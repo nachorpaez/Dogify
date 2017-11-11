@@ -5,11 +5,12 @@ import java.util.List;
 
 public class DtoPaseo {
 	
-	public static List<DtoPerro> perros;
+	public List<DtoPerro> perros;
 	public String zone;
-	public Date fecha;
+	//public Date fecha;
 	public DtoPaseador paseador;
-	public static String Tipo;
+	public String tipo;
+	
 	public List<DtoPerro> getPerros() {
 		return perros;
 	}
@@ -22,25 +23,25 @@ public class DtoPaseo {
 	public void setZone(String zone) {
 		this.zone = zone;
 	}
-	public Date getFecha() {
+/*	public Date getFecha() {
 		return fecha;
 	}
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
-	}
+	} */
 	public DtoPaseador getPaseador() {
 		return paseador;
 	}
 	public void setPaseador(DtoPaseador paseador) {
 		this.paseador = paseador;
 	}
-	public static String getTipo() {
-		return Tipo;
+	public String getTipo() {
+		return tipo;
 	}
 	public void setTipo(String tipo) {
-		Tipo = tipo;
+		this.tipo = tipo;
 	}
 
-	
-	
+
+
 }
