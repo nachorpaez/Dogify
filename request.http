@@ -2,7 +2,7 @@ POST http://localhost:8080/tarifador/tarifar
 content-type: application/json
 
 {
-   {
+   "c": {
       "id": "123",
       "perros": [
          {
@@ -13,9 +13,9 @@ content-type: application/json
       ],
       "clarin": false,
       "laNacion": false,
-      "cantidadPaseos": 11
+      "cantidadPaseos": 5
    },
-   {
+   "p": {
       "perros": [
          {
             "id": "124",

@@ -30,21 +30,21 @@ public class Tarifador {
 	public @ResponseBody DtoTarifadorTarifarResponse seleccionarPromociones(
 			@RequestBody(required = false) wrapper json) {
 	
-		//DtoCliente cliente = json.c;
-		//DtoPaseo paseo = json.p;
+		DtoCliente cliente = json.c;
+		DtoPaseo paseo = json.p;
 
 		double dinamico;
 		boolean gratis;
 		double tarifaDinamica;
 		double tarifaInicial = 0;
-		String tipoPaseo = json.p.getTipo();
+		String tipoPaseo = paseo.getTipo();
 		if (tipoPaseo == "clasic") {
 			tarifaInicial = 350;
 		} else if (tipoPaseo == "premium") {
 			tarifaInicial = 450;
 		} //Aqui puede haber una falla cuando testen ;)
 		
-		switch (json.c.getPerros().size()) {
+		switch (paseo.getPerros().size()) {
 		case 1:
 			dinamico = -20 / 100;
 			break;
@@ -66,14 +66,13 @@ public class Tarifador {
 		}
 
 		tarifaDinamica = tarifaInicial + tarifaInicial * dinamico;
-		boolean clienteLaNacion = json.c.getLaNacion();
-		boolean clienteClarin = json.c.getClarin();
+		boolean clienteLaNacion = cliente.getLaNacion();
+		boolean clienteClarin = cliente.getClarin();
 
 		double descuentoPromo = consultarPromoPersona(clienteLaNacion, clienteClarin);
 		double tarifaConDescuento = tarifaDinamica - tarifaDinamica * descuentoPromo;
-		gratis = (json.c.cantidadPaseos % 11 == 0);
+		gratis = (cliente.cantidadPaseos % 11 == 0);
 
-		// TODO : Agregar logica
 		DtoTarifadorTarifarResponse response = DtoTarifadorTarifarResponse.build(tarifaDinamica, tarifaConDescuento, gratis);
 		return response;
 	}

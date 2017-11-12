@@ -4,7 +4,5 @@ import com.dogify.dto.DtoPaseo;
 
 public class wrapper {
     public DtoCliente c;
-    public DtoPaseo p;
-
-    
+    public DtoPaseo p; 
 }
