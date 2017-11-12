@@ -27,9 +27,9 @@ public class Tarifador {
 	private UsuarioRepository usuarioRepository;
 
 	@RequestMapping(path = "/tarifar", method = RequestMethod.POST)
-	public @ResponseBody DtoTarifadorTarifarResponse seleccionarPromociones(
+	public @ResponseBody DtoTarifadorTarifarResponse tarifar(
 			@RequestBody(required = false) wrapper json) {
-	
+
 		DtoCliente cliente = json.c;
 		DtoPaseo paseo = json.p;
 
@@ -38,42 +38,45 @@ public class Tarifador {
 		double tarifaDinamica;
 		double tarifaInicial = 0;
 		String tipoPaseo = paseo.getTipo();
-		if (tipoPaseo == "clasic") {
+
+		if (tipoPaseo.equals("clasic")) {
 			tarifaInicial = 350;
-		} else if (tipoPaseo == "premium") {
+		} else if (tipoPaseo.equals("premium")) {
 			tarifaInicial = 450;
 		} //Aqui puede haber una falla cuando testen ;)
 		
 		switch (paseo.getPerros().size()) {
+		case 0:
+			dinamico = -20.0 / 100.0;
+			break;
 		case 1:
-			dinamico = -20 / 100;
+			dinamico = -15.0 / 100.0;
 			break;
 		case 2:
-			dinamico = -10 / 100;
+			dinamico = -10.0 / 100.0;
 			break;
 		case 3:
-			dinamico = -5 / 100;
+			dinamico = -5.0 / 100.0;
 			break;
 		case 4:
-			dinamico = 10 / 100;
+			dinamico = 10.0 / 100.0;
 			break;
 		case 5:
-			dinamico = 15 / 100;
+			dinamico = 15.0 / 100.0;
 			break;
 		default:
-			dinamico = 20 / 100;
-			break;
+			dinamico = 20.0 / 100.0;
 		}
-
+	
 		tarifaDinamica = tarifaInicial + tarifaInicial * dinamico;
 		boolean clienteLaNacion = cliente.getLaNacion();
 		boolean clienteClarin = cliente.getClarin();
-
 		double descuentoPromo = consultarPromoPersona(clienteLaNacion, clienteClarin);
 		double tarifaConDescuento = tarifaDinamica - tarifaDinamica * descuentoPromo;
 		gratis = (cliente.cantidadPaseos % 11 == 0);
 
-		DtoTarifadorTarifarResponse response = DtoTarifadorTarifarResponse.build(tarifaDinamica, tarifaConDescuento, gratis);
+		DtoTarifadorTarifarResponse response = DtoTarifadorTarifarResponse.build(tarifaDinamica, tarifaConDescuento,
+				gratis);
 		return response;
 	}
 
