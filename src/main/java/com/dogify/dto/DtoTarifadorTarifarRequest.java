@@ -5,7 +5,7 @@ import java.util.Date;
 public class DtoTarifadorTarifarRequest {
 
 	public Date fecha;
-	public DTOCliente cliente;
+	public DtoCliente cliente;
 	public DtoPaseo paseo;
 	
 	public static DtoTarifadorTarifarRequest mock() {

@@ -1,0 +1,58 @@
+POST http://localhost:8080/tarifador/tarifar
+content-type: application/json
+
+{
+   "c": {
+      "id": "123",
+      "perros": [
+         {
+            "id": "124",
+            "idDuenio": "456",
+            "tamanio": "5"
+         }
+      ],
+      "clarin": false,
+      "laNacion": false,
+      "cantidadPaseos": 11
+   },
+   "p": {
+      "perros": [
+         {
+            "id": "124",
+            "idDuenio": "456",
+            "tamanio": "5"
+         },
+         {
+             "id": "125",
+            "idDuenio": "446",
+            "tamanio": "6"
+         },
+         {
+             "id": "125",
+            "idDuenio": "446",
+            "tamanio": "6"
+         },
+         {
+             "id": "125",
+            "idDuenio": "446",
+            "tamanio": "6"
+         },
+         {
+             "id": "125",
+            "idDuenio": "446",
+            "tamanio": "6"
+         },
+         {
+             "id": "125",
+            "idDuenio": "446",
+            "tamanio": "6"
+         }
+      ],
+      "zone": "almagro",
+      "paseador": {
+         "id": "12345",
+         "calidad": "cinco"
+      },
+      "tipo": "premium"
+   }
+}
