@@ -13,7 +13,7 @@ content-type: application/json
       ],
       "clarin": false,
       "laNacion": false,
-      "cantidadPaseos": 5
+      "cantidadPaseos": 11
    },
    "p": {
       "perros": [
@@ -21,6 +21,31 @@ content-type: application/json
             "id": "124",
             "idDuenio": "456",
             "tamanio": "5"
+         },
+         {
+             "id": "125",
+            "idDuenio": "446",
+            "tamanio": "6"
+         },
+         {
+             "id": "125",
+            "idDuenio": "446",
+            "tamanio": "6"
+         },
+         {
+             "id": "125",
+            "idDuenio": "446",
+            "tamanio": "6"
+         },
+         {
+             "id": "125",
+            "idDuenio": "446",
+            "tamanio": "6"
+         },
+         {
+             "id": "125",
+            "idDuenio": "446",
+            "tamanio": "6"
          }
       ],
       "zone": "almagro",
@@ -28,6 +53,6 @@ content-type: application/json
          "id": "12345",
          "calidad": "cinco"
       },
-      "tipo": "clasic"
+      "tipo": "premium"
    }
 }

@@ -39,7 +39,7 @@ public class Tarifador {
 		double tarifaInicial = 0;
 		String tipoPaseo = paseo.getTipo();
 
-		if (tipoPaseo.equals("clasic")) {
+		if (tipoPaseo.equals("classic")) {
 			tarifaInicial = 350;
 		} else if (tipoPaseo.equals("premium")) {
 			tarifaInicial = 450;
