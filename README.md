@@ -1,18 +1,30 @@
 # Dogify
-Seguir esta guia para instalar lo necesario (Gradle) http://spring.io/guides/gs/spring-boot/
+Descargar e instalar el JDK de java (link)
+- Configurar la variable de entorno jAVA_HOME en las variables de entorno (windows/linux)
 
-Base de Datos
-----------------
-Crear usuario dogify en MySql y darle los permisos necesarios:
+Descargar e instalar mysql server
+-Crear una base de datos para la aplicación y generar los permisos para el usuario de la aplicación, para esto se puede correr las siguientes sentencias en el mysql workbench (usuario roo), o el cliente mysql de consola
 
-create user 'dogify'@'localhost' identified by 'dogify';
+CREATE DATABASE dogify;
+CREATE USER ‘dogify’@’localhost’ identified by ‘dogify’;
+GRANT ALL ON dogify.* TO ‘dogify’@’localhost’;
 
-GRANT ALL ON dogify.* to 'dogify'@'localhost';
 
-Para levantar el sistema
-----------------
-- ir hasta la ruta del proyecto
-- ./gradlew clean build && java -jar build/libs/gs-actuator-service-0.1.0.jar
+Desde la Terminal desde linux, o el “Command Prompt”/cmd para el caso de windows, ingresar en el directorio raiz del proyecto descomprimido
 
+Ingresar por consola para generar el ejecutable a partir del proyecto
+“mvnw clean install”
+
+Ingresar por consola a continuación el siguiente comando, para ejecutar la aplicación:
+java -jar target/main-app-0.0.1.jar
+
+Una vez que se vea el mensaje similar a “Started TPConfiguration in XX.XXX seconds (JVM running for YY.YYY)” por pantalla, la aplicación estará corriendo y podrá usarse
+
+Puede hacerse requests a la aplicación con algún cliente rest usando la url 
+http://localhost:8080/tarifador/tarifar
+
+Este endpoint acepta request REST que usan el método POST, y cuyo body contiene el json (al menos vacío: “{}” para las pruebas) con la estructura de datos ya definida
+
+Para detener la aplicación, pulsar Ctrl+C
 
 En el archivo request.http esta el json que nos manda el módulo Paseo
