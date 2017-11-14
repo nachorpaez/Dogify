@@ -3,7 +3,7 @@ Descargar e instalar el JDK de java http://www.oracle.com/technetwork/java/javas
 - Configurar la variable de entorno jAVA_HOME en las variables de entorno (windows/linux)
 
 Descargar e instalar mysql server
--Crear una base de datos para la aplicación y generar los permisos para el usuario de la aplicación, para esto se puede correr las siguientes sentencias en el mysql workbench (usuario roo), o el cliente mysql de consola
+- Crear una base de datos para la aplicación y generar los permisos para el usuario de la aplicación, para esto se puede correr las siguientes sentencias en el mysql workbench (usuario root), o el cliente mysql de consola
 
 CREATE DATABASE dogify;
 CREATE USER ‘dogify’@’localhost’ identified by ‘dogify’;
