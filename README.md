@@ -1,5 +1,5 @@
 # Dogify
-Descargar e instalar el JDK de java (link)
+Descargar e instalar el JDK de java http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 - Configurar la variable de entorno jAVA_HOME en las variables de entorno (windows/linux)
 
 Descargar e instalar mysql server
